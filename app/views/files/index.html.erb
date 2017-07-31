@@ -1,0 +1,12 @@
+<p>Hello </p>
+
+<% if @content  %> 
+  <p>  <%= @content %> </p>
+<% else %> 
+  <ul> 
+    <% @files.each do |file|%>
+      <li class="file"> <%= link_to file,files_path(next: file),name: "phu" %> </li>
+    <% end %>
+  </ul>
+<% end %>
+<a> <%= link_to ".." ,files_path(next: @parent_path)%> </a>
